@@ -3,6 +3,56 @@
 
 ServerEvents.recipes(allthemods => {
 
+    // Functional Storage
+    allthemods.shaped(
+        Item.of('functionalstorage:max_storage_upgrade', 8),
+        [
+            'NNN',
+            'NsN',
+            'NNN'
+        ],
+        {
+            N: 'functionalstorage:netherite_upgrade',
+            s: 'allthetweaks:atm_star_shard'
+        }
+    )
+
+    // Draconic Evolution
+    allthemods.custom(
+        {
+            type: 'powah:energizing',
+            energy: 2147483647,
+            ingredients: [
+                Ingredient.of('draconicevolution:dragon_heart').toJson(),
+                Ingredient.of('draconicevolution:reactor_core').toJson(),
+                Ingredient.of('allthetweaks:atm_star').toJson(),
+                Ingredient.of('draconicevolution:reactor_core').toJson(),
+                Ingredient.of('draconicevolution:dragon_heart').toJson()
+            ],
+            result: {
+                count: 1,
+                id: 'draconicevolution:creative_op_capacitor'
+            }
+        }
+    ).id('allthemods:energizing/draconicevolution_creative_power_source')
+
+    allthemods.custom(
+        {
+            type: 'powah:energizing',
+            energy: 2147483647,
+            ingredients: [
+                Ingredient.of('draconicevolution:dragon_heart').toJson(),
+                Ingredient.of('draconicevolution:chaotic_capacitor').toJson(),
+                Ingredient.of('allthetweaks:atm_star').toJson(),
+                Ingredient.of('draconicevolution:chaotic_capacitor').toJson(),
+                Ingredient.of('draconicevolution:dragon_heart').toJson()
+            ],
+            result: {
+                count: 1,
+                id: 'draconicevolution:creative_capacitor'
+            }
+        }
+    ).id('allthemods:energizing/draconicevolution_creative_capacitor')
 
     //AE2
 
